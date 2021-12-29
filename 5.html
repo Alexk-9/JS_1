@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+/**
+ * The sum two digits together.
+ * @function
+ * @param {number} digit1 - The first digit, in numeric format.
+ * @param {number} digit2 - The second digit, in numeric format.
+ * @return {number} The sum of numbers.
+ */
+
+  function sumDigit(digit1, digit2) {
+    return (digit1 + digit2);
+  }
+
+/**
+ * The difference between two numbers.
+ * @function
+ * @param {number} digit1 - The first digit, in numeric format.
+ * @param {number} digit2 - The second digit, in numeric format.
+ * @return {number} The difference between two numbers.
+ */
+
+  function difference(digit1, digit2) {
+    if (digit1 > digit2) {
+      return (digit1 - digit2);
+    } else if (digit1 < digit2) {
+      return (digit2 - digit1);
+    } else {
+      return 0;
+    }
+  }
+
+/**
+ * The multiplication of two numbers.
+ * @function
+ * @param {number} digit1 - The first digit, in numeric format.
+ * @param {number} digit2 - The second digit, in numeric format.
+ * @return {number} The multiplication of two numbers.
+ */
+
+  function multiplication(digit1, digit2) {
+    return (digit1 * digit2);
+  }
+
+/**
+ * The dividing of two numbers.
+ * @function
+ * @param {number} digit1 - The first digit, in numeric format.
+ * @param {number} digit2 - The second digit, in numeric format.
+ * @return {float} The dividing of two numbers.
+ */
+
+  function dividing(digit1, digit2) {
+    return (digit1 / digit2);
+  }
+
+/**
+ * Mathematical operations on two numbers.
+ * @function
+ * @param {number} arg1 - The first digit, in numeric format.
+ * @param {number} arg2 - The second digit, in numeric format.
+ * @param {string} operation - Mathematical operation ('+', '-', '*' or '/')
+ * @return {number} The result of a mathematical operation.
+ */
+
+  function mathOperation(arg1, arg2, operation) {
+  switch (operation) {
+    case '+':
+      return sumDigit(arg1, arg2);
+      break;
+    case '-':
+      return difference(arg1, arg2);
+      break;
+    case '*':
+      return multiplication(arg1, arg2);
+      break;
+    case '/':
+      return dividing(arg1, arg2);
+      break;
+    default:
+      return NaN;
+  }
+  }
+	
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(3, 5, "-")); // 2
+console.log(mathOperation(5, 3, "*")); // 15
+console.log(mathOperation(5, 3, "/")); // 1.6666666666666667
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+
+</script>
+</body>
+</html>
